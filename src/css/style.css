@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.inp_btn{
+    max-width: 300px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inp_btn input{
+    width: 70%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    outline: none;
+    font-size: 18px;
+    padding-left: 5px;
+}
+ button{
+    background: none;
+    /* border-radius: 8px; */
+    border: 1px solid crimson;
+    height: 30px;
+    width: 20%;
+    cursor: pointer;
+}
+.inp_btn button{
+    border: 1px solid greenyellow;
+}
+.container{
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+}

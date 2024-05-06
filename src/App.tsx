@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import InpBtn from './components/InpBtn'
+import Container from './components/Container'
+import { Tests } from './types/Type'
 
-function App() {
+const App: React.FC = () => {
+  const storedItems = localStorage.getItem("items");
+  const initialState: Tests[] = storedItems ? JSON.parse(storedItems) : [];
+
+  const [arr, setArr] = useState<Tests[]>(initialState);
+
+  const showEl = (x: Tests[]) => {
+    setArr(x)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <InpBtn arr={arr} setArr={setArr} showEl={showEl} />
+      <Container arr={arr} showEl={showEl} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
